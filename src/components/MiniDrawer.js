@@ -9,7 +9,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+// import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -17,6 +17,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import StarIcon from '@mui/icons-material/Star';
+import { Link } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ManageHistoryIcon from '@mui/icons-material/ManageHistory';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
@@ -148,9 +149,11 @@ export default function MiniDrawer() {
                 ]}>
             {open ? <ArrowForwardIosIcon /> : <ChevronLeftIcon />}
           </IconButton>
-          {['Inbox', 'Starred', 'Send email', 'Drafts', 'Deleted'].map((text, index) => (
+          {['Home', 'Admin', 'Send email', 'Access Control', 'Deleted'].map((text, index) => (
             <ListItem key={text} disablePadding >
-                
+
+               <Link to={`/${text.toLowerCase().replace(' ', '')}`} style={{ textDecoration: 'none', color: 'white' }}>
+
               <ListItemButton
                 sx={[
                   {
@@ -206,6 +209,7 @@ export default function MiniDrawer() {
 
                 
               </ListItemButton>
+              </Link>
             </ListItem>
           ))}
         </List>

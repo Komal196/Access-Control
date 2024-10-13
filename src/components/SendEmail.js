@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Admin() {
+function SendEmail() {
   return (
     <div style={{ textAlign: 'center', marginTop: '15%' }}>
-      <h1>Welcome to the Admin Page</h1>
+      <h1>Welcome to the Send Email Page</h1>
     </div>
   )
 }
 
-export default Admin
+export default SendEmail
